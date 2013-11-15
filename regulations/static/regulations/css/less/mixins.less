@@ -45,12 +45,27 @@ mixins.less contains any mixins or variables to be used throughout the LESS file
     font-family: "Avenir Next", Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
+
+    /* Internet Explorer garbles Avenir when saving as a PDF */
+    .lt-ie9 & {
+        @media print {
+            font-family: Arial, sans-serif;
+        }
+    }
 }
 
 .avenir-next-demi {
     font-family: "Avenir Next Demi", Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
+
+        /* Internet Explorer garbles Avenir when saving as a PDF */
+    .lt-ie9 & {
+        @media print {
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+        }
+    }
 }
 
 /*
