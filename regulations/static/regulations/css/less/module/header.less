@@ -11,9 +11,7 @@
     z-index: 1000;
 
     ul {
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 0;
+        .reset;
     }
 
     li {
@@ -29,8 +27,6 @@
     height: 3.75em;
 
     .logo {
-        display: block;
-        float: right;
         margin-top: 13px; /* this manually centers the image based on its height and the height of the container */
         margin-right: 15px;
     }
@@ -108,5 +104,17 @@
     font-size: 1em;
     letter-spacing: 1px;
     display: inline-block;
+}
+
+.header-nav-list {
+    float: left;
+    display: block;
+    height: 57px;
+
+    li {
+        display: inline;
+        padding-right: 10px;
+        line-height: 57px;
+    }
 }
 
