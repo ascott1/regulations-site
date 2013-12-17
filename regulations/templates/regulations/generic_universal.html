@@ -12,7 +12,13 @@
     <div class="title">
         <h1 class="site-title"><span class="e">e</span>Regulations</h1>
     </div> <!-- /reg-title -->
-    {% include "regulations/logo.html" %} 
+    <div class="site-nav header-secondary">
+    <nav class="header-nav">
+        <ul class="header-nav-list">
+            <li><a href="{% url 'universal_landing' %}">Regulations</a></li>
+        </ul>
+    {% include "regulations/logo.html" %}
+    </div> <!-- /.site-nav -->
     </div>
 </header>
 
