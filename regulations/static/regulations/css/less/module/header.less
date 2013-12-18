@@ -27,7 +27,7 @@
     height: 3.75em;
 
     .logo {
-        margin-top: 13px; /* this manually centers the image based on its height and the height of the container */
+        margin-top: 12.5px; /* this manually centers the image based on its height and the height of the container */
         margin-right: 15px;
     }
 
@@ -35,12 +35,13 @@
     .title {
         display: block;
         float: left;
-        line-height: 57px;
 
         .reg-title,
         .site-title {
-            font-size: 1.325em;
             .reset;
+            display: inline;
+            vertical-align: middle;
+            line-height: 57px;
         }
 
         .reg-title {
@@ -48,9 +49,18 @@
             font-size: 1.125em;
         }
 
+        .reg-title:before {
+            content: '|';
+            margin-right: 15px;
+            font-size: 15px;
+            color: @medium_gray;
+        }
+
+
         .site-title {
             .avenir-next-demi;
             font-size: 1.375em;
+            margin-right: 15px;
         }
 
         .e {
@@ -107,14 +117,33 @@
 }
 
 .header-nav-list {
+    .reset;
     float: left;
     display: block;
-    height: 57px;
 
     li {
-        display: inline;
-        padding-right: 10px;
+        .reset;
+        display: inline-block;
+        padding-right: 30px;
+        height: 57px;
         line-height: 57px;
+        font-size: 0.75em;
+    }
+
+    a {
+        text-transform: uppercase;
+        .avenir-next-demi;
+    }
+
+    a:link,
+    a:visited {
+        color: @dark_gray;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: @pacific;
     }
 }
 
