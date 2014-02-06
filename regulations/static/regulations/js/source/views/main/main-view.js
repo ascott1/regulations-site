@@ -162,10 +162,10 @@ define('main-view', ['jquery', 'underscore', 'backbone', 'search-results-view', 
 
         render: function(html, options) {
             var offsetTop, $scrollToId;
-            this.cleanUp();
 
             if (typeof this.childView !== 'undefined') {
                 this.sectionFooter.remove();
+                this.childView.remove();
             }
 
             this.$el.html('');
@@ -202,16 +202,8 @@ define('main-view', ['jquery', 'underscore', 'backbone', 'search-results-view', 
 
             // change focus to main content area when new sections are loaded
             $('.section-focus').focus();
-        },
-
-        cleanUp: function(){
-            if (this.childView.length > 0) {
-                for (var i = 0; i < this.childView.length; i++){
-                    this.childView[i].remove();
-                }
-            }
-            this.childView.length = 0;
         }
+
     });
     var main = new MainView();
     return main;
