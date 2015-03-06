@@ -70,6 +70,8 @@ regulations/static/regulations/js/source/lib/
 regulations/static/regulations/js/tests/browser/test.config.js
 regulations/static/regulations/js/built/*
 regulations/static/regulations/js/built/regulations.js
+regulations/static/regulations/css/style.css
+regulations/static/regulations/css/style.min.css
 docs/Makefile
 docs/make.bat
 regulations-core/
