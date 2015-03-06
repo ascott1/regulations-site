@@ -355,28 +355,47 @@ The `<ol>` tag needs to have the appropriate list type applied
 ```
 */
 
-.main-content ol, dfn, .stripped-marker {
-  .avenir-next-demi;
+.main-content ol, dfn {
+    .avenir-next-demi;
 }
 
 .appendix-section ol {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .main-content p {
-  font-family: @body-font;
-  font-weight: 400;
+    font-family: @body-font;
+    font-weight: 400;
 }
 
-.paragraph-marker, .stripped-marker {
-  display: none;
+/* IE9 chokes on display: none for some reason */
+.lt-1e9,
+.lt-ie10 {
+    .paragraph-marker,
+    .reg-section .stripped-marker,
+    .supplement-section .stripped-marker {
+        visibility: hidden;
+        font-size: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+/* for browsers greater than IE9 */
+.gt-ie9 {
+    .paragraph-marker,
+    .reg-section .stripped-marker,
+    .supplement-section .stripped-marker {
+        display: none;
+    }
 }
 
 .appendix-section .stripped-marker {
-  display: block;
-  float: left;
-  margin-left: -20px;
-  width: 20px;
+    .avenir-next-demi;
+    display: block;
+    float: left;
+    margin-left: -20px;
+    width: 20px;
 }
 
 .appendix-section .inline-interpretation-content .stripped-marker {
