@@ -999,20 +999,20 @@ dfn {
   font-weight: 400;
 }
 /* IE9 chokes on display: none for some reason */
-.lt-1e9 .paragraph-marker,
 .lt-ie10 .paragraph-marker,
-.lt-1e9 .reg-section .stripped-marker,
 .lt-ie10 .reg-section .stripped-marker,
-.lt-1e9 .supplement-section .stripped-marker,
 .lt-ie10 .supplement-section .stripped-marker {
   visibility: hidden;
   font-size: 0;
   width: 0;
   height: 0;
 }
-/* for browsers greater than IE9 */
+/* for browsers greater and less than IE9 */
+.lt-ie9 .paragraph-marker,
 .gt-ie9 .paragraph-marker,
+.lt-ie9 .reg-section .stripped-marker,
 .gt-ie9 .reg-section .stripped-marker,
+.lt-ie9 .supplement-section .stripped-marker,
 .gt-ie9 .supplement-section .stripped-marker {
   display: none;
 }

@@ -369,7 +369,6 @@ The `<ol>` tag needs to have the appropriate list type applied
 }
 
 /* IE9 chokes on display: none for some reason */
-.lt-1e9,
 .lt-ie10 {
     .paragraph-marker,
     .reg-section .stripped-marker,
@@ -381,7 +380,8 @@ The `<ol>` tag needs to have the appropriate list type applied
     }
 }
 
-/* for browsers greater than IE9 */
+/* for browsers greater and less than IE9 */
+.lt-ie9,
 .gt-ie9 {
     .paragraph-marker,
     .reg-section .stripped-marker,
