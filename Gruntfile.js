@@ -47,6 +47,21 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    /**
+     * purifycss: https://github.com/purifycss/grunt-purifycss
+     *
+     * Detects which CSS selectors are being used and creates a file without the unused CSS
+     */
+    purifycss: {
+      options: {},
+      target: {
+        src: ['regulations/templates/regulations/**/*.html', '<%= env.frontEndPath %>/js/source/**/*.js'],
+        css: ['<%= env.frontEndPath %>/css/style.css'],
+        dest: '<%= env.frontEndPath %>/css/style.css'
+      }
+    },
+
     /**
      * ESLint: https://github.com/sindresorhus/grunt-eslint
      *
@@ -156,7 +171,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= env.frontEndPath %>/css/less/**/*.less'],
-        tasks: ['less:dev']
+        tasks: ['less:dev', 'purifycss']
       },
       options: {
         livereload: true
@@ -185,6 +200,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['eslint', 'mocha_istanbul', 'nose']);
   grunt.registerTask('test-js', ['eslint', 'mocha_istanbul']);
   grunt.registerTask('build', ['default', 'test-js']);
-  grunt.registerTask('squish', ['browserify', 'uglify', 'less', 'cssmin']);
-  grunt.registerTask('default', ['browserify', 'uglify', 'less', 'cssmin']);
+  grunt.registerTask('squish', ['browserify', 'uglify', 'less', 'purifycss', 'cssmin']);
+  grunt.registerTask('default', ['browserify', 'uglify', 'less', 'purifycss', 'cssmin']);
 };
